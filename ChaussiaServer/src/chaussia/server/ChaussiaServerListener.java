@@ -6,7 +6,7 @@ import java.util.Map;
 import com.esotericsoftware.kryonet.Connection;
 import com.esotericsoftware.kryonet.Listener;
 
-import chaussia.shared.messages.NeuesSpielMsg;
+import chaussia.shared.messages.NewGameMsg;
 
 public class ChaussiaServerListener extends Listener
 {
@@ -19,7 +19,7 @@ public class ChaussiaServerListener extends Listener
     @Override
     public void received(Connection connection, Object object)
     {
-        if (object instanceof NeuesSpielMsg)
+        if (object instanceof NewGameMsg)
         {
 
         }
