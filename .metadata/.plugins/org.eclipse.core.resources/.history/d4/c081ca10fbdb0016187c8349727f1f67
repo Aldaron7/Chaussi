@@ -1,6 +1,0 @@
-package chaussia.shared.einheiten.arbeiter;
-
-public class Geselle extends Arbeiter
-{
-
-}

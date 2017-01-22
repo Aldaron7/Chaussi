@@ -1,6 +1,0 @@
-package chaussia.shared.einheiten.produktion;
-
-public interface Arbeiter
-{
-
-}
