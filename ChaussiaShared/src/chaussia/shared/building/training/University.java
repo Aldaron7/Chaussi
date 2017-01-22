@@ -15,49 +15,49 @@ public class University extends AbstractBuilding implements TrainingFacility
     private static final long serialVersionUID = 1L;
 
     @Override
-    public void resetUpgradedauer()
+    public void resetUpgradePeriod()
     {
-        this.setUpgradedauer(Const.UPGRADEPERIOD_UNIVERSITY);
+        this.setupgradeperiod(Const.UPGRADEPERIOD_UNIVERSITY);
     }
 
     @Override
-    public void resetBauzeit()
+    public void resetConstructionPeriod()
     {
-        this.setBauzeit(Const.CONSTRUCTIONPERIOD_UNIVERSITY);
+        this.setConstructionperiod(Const.CONSTRUCTIONPERIOD_UNIVERSITY);
     }
 
     @Override
     public Building upgrade()
     {
-        if (this.getStufe() < 1)
+        if (this.getTier() < 1)
         {
-            this.resetUpgradedauer();
+            this.resetUpgradePeriod();
         }
         return this;
     }
 
     @Override
-    public List<BuildingType> getBenoetigteGebaeude()
+    public List<BuildingType> getRequiredBuildings()
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public Stock getBaukosten()
+    public Stock getConstructionCost()
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public BuildingType getTyp()
+    public BuildingType getType()
     {
         return BuildingType.UNIVERSITY;
     }
 
     @Override
-    public List<UnitType> getAuszubildende()
+    public List<UnitType> getTrainees()
     {
         // TODO Auto-generated method stub
         return null;

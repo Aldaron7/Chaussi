@@ -19,14 +19,14 @@ public class LaborerFactory
         {
             case WORKER:
                 arbeiter = new Worker();
-                arbeiter.setUnterhaltskosten(Const.UPKEEP_WORKER);
+                arbeiter.setUpkeep(Const.UPKEEP_WORKER);
                 break;
             default:
                 break;
         }
         if (arbeiter != null)
         {
-            arbeiter.resetAusbildungszeit();
+            arbeiter.resetTrainigPeriod();
         }
         return arbeiter;
     }

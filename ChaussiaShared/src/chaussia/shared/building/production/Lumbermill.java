@@ -14,45 +14,45 @@ public class Lumbermill extends AbstractProductionBuilding
     private static final long serialVersionUID = 1L;
 
     @Override
-    public MaterialType getRohstoff()
+    public MaterialType getMaterial()
     {
         return MaterialType.BOARD;
     }
 
     @Override
-    public UnitType getArbeitertyp()
+    public UnitType getUnitType()
     {
         return UnitType.WORKER;
     }
 
     @Override
-    public void resetUpgradedauer()
+    public void resetUpgradePeriod()
     {
-        this.setUpgradedauer(Const.UPGRADE_PRODUCTION2);
+        this.setupgradeperiod(Const.UPGRADE_PRODUCTION2);
     }
 
     @Override
-    public void resetBauzeit()
+    public void resetConstructionPeriod()
     {
-        this.setBauzeit(Const.CONSTRUCTIONPERIOD_PRODUCTION2);
+        this.setConstructionperiod(Const.CONSTRUCTIONPERIOD_PRODUCTION2);
     }
 
     @Override
-    public List<BuildingType> getBenoetigteGebaeude()
-    {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public Stock getBaukosten()
+    public List<BuildingType> getRequiredBuildings()
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public BuildingType getTyp()
+    public Stock getConstructionCost()
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public BuildingType getType()
     {
         return BuildingType.LUMBERMILL;
     }

@@ -19,37 +19,37 @@ public class Village extends AbstractPlace
     public Building upgrade()
     {
         Place stadt = new PlaceFactory().create(BuildingType.TOWN);
-        stadt.resetUpgradedauer();
+        stadt.resetUpgradePeriod();
         return stadt;
     }
 
     @Override
-    public void resetUpgradedauer()
+    public void resetUpgradePeriod()
     {
     }
 
     @Override
-    public void resetBauzeit()
+    public void resetConstructionPeriod()
     {
-        this.setBauzeit(Const.CONSTRUCTIONPERIOD_VILLAGE);
+        this.setConstructionperiod(Const.CONSTRUCTIONPERIOD_VILLAGE);
     }
 
     @Override
-    public List<BuildingType> getBenoetigteGebaeude()
-    {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public Stock getBaukosten()
+    public List<BuildingType> getRequiredBuildings()
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public BuildingType getTyp()
+    public Stock getConstructionCost()
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public BuildingType getType()
     {
         return BuildingType.VILLAGE;
     }

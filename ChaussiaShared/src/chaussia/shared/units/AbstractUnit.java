@@ -2,28 +2,28 @@ package chaussia.shared.units;
 
 public abstract class AbstractUnit implements Unit
 {
-    private int ausbildungszeit, unterhaltskosten = 0;
+    private int trainingPeriod, upkeep = 0;
 
     @Override
-    public int getAusbildungszeit()
+    public int getTrainingPeriod()
     {
-        return this.ausbildungszeit;
+        return this.trainingPeriod;
     }
 
-    public void setAusbildungszeit(int ausbildungszeit)
+    public void setTrainingPeriod(int trainingPeriod)
     {
-        this.ausbildungszeit = ausbildungszeit;
+        this.trainingPeriod = trainingPeriod;
     }
 
     @Override
-    public int getUnterhaltskosten()
+    public int getUpkeep()
     {
-        return this.unterhaltskosten;
+        return this.upkeep;
     }
 
-    public void setUnterhaltskosten(int unterhaltskosten)
+    public void setUpkeep(int upkeep)
     {
-        this.unterhaltskosten = unterhaltskosten;
+        this.upkeep = upkeep;
     }
 
 }

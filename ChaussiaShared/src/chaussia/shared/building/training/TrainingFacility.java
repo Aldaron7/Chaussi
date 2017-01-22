@@ -7,5 +7,5 @@ import chaussia.shared.units.UnitType;
 
 public interface TrainingFacility extends Building
 {
-    public List<UnitType> getAuszubildende();
+    public List<UnitType> getTrainees();
 }

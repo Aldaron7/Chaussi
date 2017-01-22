@@ -4,15 +4,15 @@ import chaussia.shared.material.Stock;
 
 public interface Unit
 {
-    int getAusbildungszeit();
+    int getTrainingPeriod();
 
-    void resetAusbildungszeit();
+    void resetTrainigPeriod();
 
-    int getUnterhaltskosten();
+    int getUpkeep();
 
-    Stock getAusbildungskosten();
+    Stock getTrainingCost();
 
-    Stock getRohstoffUnterhalt();
+    Stock getUpkeepMaterials();
 
-    UnitType getTyp();
+    UnitType getType();
 }

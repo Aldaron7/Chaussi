@@ -14,45 +14,45 @@ public class Shepherd extends AbstractProductionBuilding
     private static final long serialVersionUID = 1L;
 
     @Override
-    public MaterialType getRohstoff()
+    public MaterialType getMaterial()
     {
         return MaterialType.WOOL;
     }
 
     @Override
-    public UnitType getArbeitertyp()
+    public UnitType getUnitType()
     {
         return UnitType.WORKER;
     }
 
     @Override
-    public void resetUpgradedauer()
+    public void resetUpgradePeriod()
     {
-        this.setUpgradedauer(Const.UPGRADE_PRODUCTION1);
+        this.setupgradeperiod(Const.UPGRADE_PRODUCTION1);
     }
 
     @Override
-    public void resetBauzeit()
+    public void resetConstructionPeriod()
     {
-        this.setBauzeit(Const.CONSTRUCTIONPERIOD_PRODUCTION1);
+        this.setConstructionperiod(Const.CONSTRUCTIONPERIOD_PRODUCTION1);
     }
 
     @Override
-    public List<BuildingType> getBenoetigteGebaeude()
-    {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public Stock getBaukosten()
+    public List<BuildingType> getRequiredBuildings()
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public BuildingType getTyp()
+    public Stock getConstructionCost()
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public BuildingType getType()
     {
         return BuildingType.SHEPHERD;
     }

@@ -8,18 +8,18 @@ import java.util.Set;
 public class Stock implements Map<MaterialType, Integer>
 {
 
-    private Map<MaterialType, Integer> kosten = new HashMap<>();
+    private Map<MaterialType, Integer> stock = new HashMap<>();
 
-    public Stock(Map<MaterialType, Integer> kosten)
+    public Stock(Map<MaterialType, Integer> stock)
     {
         this();
-        this.putAll(kosten);
+        this.putAll(stock);
     }
 
-    public Stock(Material... rohstoffe)
+    public Stock(Material... materials)
     {
         this();
-        for (Material material : rohstoffe)
+        for (Material material : materials)
         {
             this.put(material);
         }
@@ -27,15 +27,15 @@ public class Stock implements Map<MaterialType, Integer>
 
     public Stock()
     {
-        for (MaterialType rohstoff : MaterialType.values())
+        for (MaterialType materialType : MaterialType.values())
         {
-            this.kosten.put(rohstoff, 0);
+            this.stock.put(materialType, 0);
         }
     }
 
-    public void putKosten(MaterialType rohstoff, Integer wert)
+    public void putKosten(MaterialType material, Integer value)
     {
-        this.kosten.put(rohstoff, wert);
+        this.stock.put(material, value);
     }
 
     public void put(Material material)
@@ -45,12 +45,12 @@ public class Stock implements Map<MaterialType, Integer>
 
     public boolean contains(Stock stock)
     {
-        return stock.keySet().stream().allMatch(rohstoff -> this.get(rohstoff) >= stock.get(rohstoff));
+        return stock.keySet().stream().allMatch(material -> this.get(material) >= stock.get(material));
     }
 
     public void multiply(double skalar)
     {
-        this.kosten.entrySet().forEach(entry -> entry.setValue((int) (entry.getValue() * skalar)));
+        this.stock.entrySet().forEach(entry -> entry.setValue((int) (entry.getValue() * skalar)));
     }
 
     public boolean subtract(Stock stock)
@@ -71,7 +71,7 @@ public class Stock implements Map<MaterialType, Integer>
     {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((this.kosten == null) ? 0 : this.kosten.hashCode());
+        result = prime * result + ((this.stock == null) ? 0 : this.stock.hashCode());
         return result;
     }
 
@@ -91,15 +91,15 @@ public class Stock implements Map<MaterialType, Integer>
             return false;
         }
         Stock other = (Stock) obj;
-        if (this.kosten == null)
+        if (this.stock == null)
         {
-            if (other.kosten != null)
+            if (other.stock != null)
             {
                 return false;
             }
         }
         else
-            if (!this.kosten.equals(other.kosten))
+            if (!this.stock.equals(other.stock))
             {
                 return false;
             }
@@ -109,73 +109,73 @@ public class Stock implements Map<MaterialType, Integer>
     @Override
     public void clear()
     {
-        this.kosten.clear();
+        this.stock.clear();
     }
 
     @Override
     public boolean containsKey(Object key)
     {
-        return this.kosten.containsKey(key);
+        return this.stock.containsKey(key);
     }
 
     @Override
     public boolean containsValue(Object value)
     {
-        return this.kosten.containsValue(value);
+        return this.stock.containsValue(value);
     }
 
     @Override
     public Set<java.util.Map.Entry<MaterialType, Integer>> entrySet()
     {
-        return this.kosten.entrySet();
+        return this.stock.entrySet();
     }
 
     @Override
     public Integer get(Object key)
     {
-        return this.kosten.get(key);
+        return this.stock.get(key);
     }
 
     @Override
     public boolean isEmpty()
     {
-        return this.kosten.isEmpty();
+        return this.stock.isEmpty();
     }
 
     @Override
     public Set<MaterialType> keySet()
     {
-        return this.kosten.keySet();
+        return this.stock.keySet();
     }
 
     @Override
     public Integer put(MaterialType key, Integer value)
     {
-        return this.kosten.put(key, value);
+        return this.stock.put(key, value);
     }
 
     @Override
     public void putAll(Map<? extends MaterialType, ? extends Integer> m)
     {
-        this.kosten.putAll(m);
+        this.stock.putAll(m);
     }
 
     @Override
     public Integer remove(Object key)
     {
-        return this.kosten.remove(key);
+        return this.stock.remove(key);
     }
 
     @Override
     public int size()
     {
-        return this.kosten.size();
+        return this.stock.size();
     }
 
     @Override
     public Collection<Integer> values()
     {
-        return this.kosten.values();
+        return this.stock.values();
     }
 
 }

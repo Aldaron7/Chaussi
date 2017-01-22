@@ -7,72 +7,72 @@ public abstract class AbstractBuilding implements Serializable, Building
 
     private static final long serialVersionUID = 1L;
 
-    private int               unterhaltskosten, bauzeit, upgradedauer, stufe = 0;
+    private int               upkeep, constructionperiod, upgradeperiod, tier = 0;
 
     public AbstractBuilding()
     {
     }
 
     @Override
-    public int getUnterhaltskosten()
+    public int getUpkeep()
     {
         // unterhalt * (2 ^ stufe) = unterhalt * (1,2,4,8,16,...) [exponentielles Wachstum]
-        return (int) (this.unterhaltskosten * Math.pow(2, this.getStufe()));
+        return (int) (this.upkeep * Math.pow(2, this.getTier()));
     }
 
-    public void setUnterhaltskosten(int unterhaltskosten)
+    public void setUpkeep(int upkeep)
     {
-        this.unterhaltskosten = unterhaltskosten;
+        this.upkeep = upkeep;
     }
 
     @Override
-    public void reduziereBauzeit()
+    public void reduceConstructionPeriod()
     {
-        if (this.bauzeit > 0)
+        if (this.constructionperiod > 0)
         {
-            this.bauzeit--;
+            this.constructionperiod--;
         }
     }
 
     @Override
-    public void reduziereUpgradeDauer()
+    public void reduceUpgrdePeriod()
     {
-        if (this.upgradedauer > 0)
+        if (this.upgradeperiod > 0)
         {
-            if (this.upgradedauer <= 1)
+            if (this.upgradeperiod <= 1)
             {
-                this.stufe++;
+                this.tier++;
             }
-            this.upgradedauer--;
+            this.upgradeperiod--;
         }
     }
 
     @Override
-    public int getUpgradedauer()
+    public int getUpgradePeriod()
     {
-        return this.upgradedauer;
+        return this.upgradeperiod;
     }
 
-    public void setUpgradedauer(int upgradedauer)
+    public void setupgradeperiod(int upgradeperiod)
     {
-        this.upgradedauer = upgradedauer;
-    }
-
-    @Override
-    public int getBauzeit()
-    {
-        return this.bauzeit;
-    }
-
-    public void setBauzeit(int bauzeit)
-    {
-        this.bauzeit = bauzeit;
+        this.upgradeperiod = upgradeperiod;
     }
 
     @Override
-    public int getStufe()
+    public int getConstructionPeriod()
     {
-        return this.stufe;
+        return this.constructionperiod;
+    }
+
+    public void setConstructionperiod(int constructionperiod)
+    {
+        this.constructionperiod = constructionperiod;
+    }
+
+    @Override
+    public int getTier()
+    {
+        return this.tier;
     }
 
 }

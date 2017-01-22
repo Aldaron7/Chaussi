@@ -1,26 +1,29 @@
 package chaussia.shared.building.production;
 
+import java.util.List;
+
 import chaussia.shared.building.Building;
 import chaussia.shared.material.MaterialType;
+import chaussia.shared.units.Unit;
 import chaussia.shared.units.UnitType;
 
 public interface ProductionBuilding extends Building
 {
 
-    int getErtrag();
+    boolean isActive();
 
-    boolean isArbeitet();
+    void setActive(boolean active);
 
-    void setArbeitet(boolean arbeitet);
+    MaterialType getMaterial();
 
-    MaterialType getRohstoff();
+    UnitType getUnitType();
 
-    UnitType getArbeitertyp();
+    int getMaxLaborer();
 
-    int getMaxArbeiter();
+    List<Unit> getLaborer();
 
-    boolean addArbeiter();
+    boolean addLaborer(Unit unit);
 
-    boolean removeArbeiter();
+    Unit removeLaborer();
 
 }

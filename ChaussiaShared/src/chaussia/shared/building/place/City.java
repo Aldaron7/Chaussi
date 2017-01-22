@@ -22,32 +22,32 @@ public class City extends AbstractPlace
     }
 
     @Override
-    public void resetUpgradedauer()
+    public void resetUpgradePeriod()
     {
-        this.setUpgradedauer(Const.UPGRADEPERIOD_CITY);
+        this.setupgradeperiod(Const.UPGRADEPERIOD_CITY);
     }
 
     @Override
-    public void resetBauzeit()
+    public void resetConstructionPeriod()
     {
     }
 
     @Override
-    public List<BuildingType> getBenoetigteGebaeude()
-    {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public Stock getBaukosten()
+    public List<BuildingType> getRequiredBuildings()
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public BuildingType getTyp()
+    public Stock getConstructionCost()
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public BuildingType getType()
     {
         return BuildingType.CITY;
     }

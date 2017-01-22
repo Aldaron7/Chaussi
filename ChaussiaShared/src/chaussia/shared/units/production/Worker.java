@@ -9,27 +9,27 @@ public class Worker extends AbstractUnit
 {
 
     @Override
-    public void resetAusbildungszeit()
+    public void resetTrainigPeriod()
     {
-        this.setAusbildungszeit(Const.CONSTRUCTIONPERIOD_PRODUCTION1);
+        this.setTrainingPeriod(Const.CONSTRUCTIONPERIOD_PRODUCTION1);
     }
 
     @Override
-    public Stock getAusbildungskosten()
-    {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public Stock getRohstoffUnterhalt()
+    public Stock getTrainingCost()
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public UnitType getTyp()
+    public Stock getUpkeepMaterials()
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public UnitType getType()
     {
         return UnitType.WORKER;
     }

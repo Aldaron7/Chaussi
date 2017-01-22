@@ -12,28 +12,28 @@ public class PlaceFactory
 
     public Place create(BuildingType typ)
     {
-        AbstractPlace ortschaft = null;
+        AbstractPlace place = null;
         switch (typ)
         {
             case VILLAGE:
-                ortschaft = new Village();
-                ortschaft.setSteuerertrag(Const.TAXYIELD_VILLAGE);
+                place = new Village();
+                place.setTaxes(Const.TAXYIELD_VILLAGE);
                 break;
             case TOWN:
-                ortschaft = new Town();
-                ortschaft.setSteuerertrag(2 * Const.TAXYIELD_VILLAGE);
+                place = new Town();
+                place.setTaxes(2 * Const.TAXYIELD_VILLAGE);
                 break;
             case CITY:
-                ortschaft = new City();
-                ortschaft.setSteuerertrag(4 * Const.TAXYIELD_VILLAGE);
+                place = new City();
+                place.setTaxes(4 * Const.TAXYIELD_VILLAGE);
                 break;
             default:
                 break;
         }
-        if (ortschaft != null)
+        if (place != null)
         {
-            ortschaft.resetBauzeit();
+            place.resetConstructionPeriod();
         }
-        return ortschaft;
+        return place;
     }
 }

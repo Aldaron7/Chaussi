@@ -1,93 +1,87 @@
 package chaussia.shared.building.production;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import chaussia.shared.building.AbstractBuilding;
 import chaussia.shared.building.Building;
+import chaussia.shared.units.Unit;
 
 public abstract class AbstractProductionBuilding extends AbstractBuilding implements ProductionBuilding
 {
+
     private static final long serialVersionUID = 1L;
-    private int               ertrag, anzahlArbeiter = 0;
-    private boolean           arbeitet         = false;
+    private List<Unit>        laborer          = new ArrayList<>();
+    private boolean           active           = false;
 
     public AbstractProductionBuilding()
     {
     }
 
     @Override
-    public int getErtrag()
+    public int getUpkeep()
     {
         // lineare Entwicklung proportional zu anzahl Arbeiter
-        if (this.getBauzeit() <= 0 && this.isArbeitet())
+        if (this.getConstructionPeriod() <= 0 && this.isActive())
         {
-            return this.ertrag * (this.anzahlArbeiter);
+            return super.getUpkeep() * (this.laborer.size());
         }
         return 0;
     }
 
-    public void setErtrag(int ertrag)
-    {
-        this.ertrag = ertrag;
-    }
-
     @Override
-    public boolean isArbeitet()
+    public boolean isActive()
     {
-        if (this.anzahlArbeiter <= 0)
+        if (this.laborer.size() <= 0)
         {
             return false;
         }
-        return this.arbeitet;
+        return this.active;
     }
 
     @Override
-    public void setArbeitet(boolean arbeitet)
+    public void setActive(boolean arbeitet)
     {
-        this.arbeitet = arbeitet;
+        this.active = arbeitet;
     }
 
     @Override
-    public boolean addArbeiter()
+    public boolean addLaborer(Unit unit)
     {
-        if (this.anzahlArbeiter < this.getMaxArbeiter())
+        if (this.laborer.size() < this.getMaxLaborer())
         {
-            this.anzahlArbeiter++;
-            return true;
+            return this.laborer.add(unit);
         }
         return false;
     }
 
     @Override
-    public boolean removeArbeiter()
+    public Unit removeLaborer()
     {
-        if (this.anzahlArbeiter > 0)
+        if (!this.laborer.isEmpty())
         {
-            this.anzahlArbeiter--;
-            return true;
+            return this.laborer.remove(0);
         }
-        return false;
+        return null;
 
     }
 
     @Override
-    public int getMaxArbeiter()
+    public List<Unit> getLaborer()
     {
-        return this.getStufe() + 1;
+        return this.laborer;
     }
 
     @Override
-    public int getUnterhaltskosten()
+    public int getMaxLaborer()
     {
-        if (this.isArbeitet())
-        {
-            return super.getUnterhaltskosten();
-        }
-        return 0;
+        return this.getTier() + 1;
     }
 
     @Override
     public Building upgrade()
     {
-        this.resetUpgradedauer();
+        this.resetUpgradePeriod();
         return this;
     }
 

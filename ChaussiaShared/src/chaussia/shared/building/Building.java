@@ -7,27 +7,27 @@ import chaussia.shared.material.Stock;
 
 public interface Building extends Serializable
 {
-    int getUnterhaltskosten();
+    int getUpkeep();
 
-    void reduziereUpgradeDauer();
+    void reduceUpgrdePeriod();
 
-    int getUpgradedauer();
+    int getUpgradePeriod();
 
-    void resetUpgradedauer();
+    void resetUpgradePeriod();
 
-    void reduziereBauzeit();
+    void reduceConstructionPeriod();
 
-    int getBauzeit();
+    int getConstructionPeriod();
 
-    void resetBauzeit();
+    void resetConstructionPeriod();
 
-    int getStufe();
+    int getTier();
 
     Building upgrade();
 
-    List<BuildingType> getBenoetigteGebaeude();
+    List<BuildingType> getRequiredBuildings();
 
-    Stock getBaukosten();
+    Stock getConstructionCost();
 
-    BuildingType getTyp();
+    BuildingType getType();
 }

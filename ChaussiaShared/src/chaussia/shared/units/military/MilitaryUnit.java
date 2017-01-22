@@ -4,12 +4,12 @@ import chaussia.shared.units.Unit;
 
 public interface MilitaryUnit extends Unit
 {
-    int getBewegungspunkte();
+    int getMovementPoints();
 
-    void resetBewegungspunkte();
+    void resetMovementPoints();
 
-    int getMaxBewegungspunkte();
+    int getMaxMovementPoints();
 
-    int getStaerke();
+    int getStrength();
 
 }

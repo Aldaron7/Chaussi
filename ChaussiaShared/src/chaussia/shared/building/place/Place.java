@@ -5,6 +5,6 @@ import chaussia.shared.building.Building;
 public interface Place extends Building
 {
 
-    int getSteuerertrag();
+    int getTaxes();
 
 }

@@ -5,25 +5,25 @@ import chaussia.shared.building.AbstractBuilding;
 public abstract class AbstractPlace extends AbstractBuilding implements Place
 {
     private static final long serialVersionUID = 1L;
-    private int               steuerertrag;
+    private int               taxes;
 
     public AbstractPlace()
     {
     }
 
     @Override
-    public int getSteuerertrag()
+    public int getTaxes()
     {
-        if (this.getUpgradedauer() > 0)
+        if (this.getUpgradePeriod() > 0)
         {
-            return this.steuerertrag / 2;
+            return this.taxes / 2;
         }
-        return this.steuerertrag;
+        return this.taxes;
     }
 
-    public void setSteuerertrag(int steuerertrag)
+    public void setTaxes(int taxes)
     {
-        this.steuerertrag = steuerertrag;
+        this.taxes = taxes;
     }
 
 }

@@ -18,50 +18,50 @@ public class School extends AbstractBuilding implements TrainingFacility
     @Override
     public Building upgrade()
     {
-        if (this.getStufe() < 1)
+        if (this.getTier() < 1)
         {
-            this.resetUpgradedauer();
+            this.resetUpgradePeriod();
         }
         return this;
     }
 
     @Override
-    public void resetUpgradedauer()
+    public void resetUpgradePeriod()
     {
-        this.setUpgradedauer(Const.UPGRADEPERIOD_SCHOOL);
+        this.setupgradeperiod(Const.UPGRADEPERIOD_SCHOOL);
     }
 
     @Override
-    public void resetBauzeit()
+    public void resetConstructionPeriod()
     {
-        this.setBauzeit(Const.CONSTRUCTIONPERIOD_SCHOOL);
+        this.setConstructionperiod(Const.CONSTRUCTIONPERIOD_SCHOOL);
     }
 
     @Override
-    public List<BuildingType> getBenoetigteGebaeude()
-    {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public Stock getBaukosten()
+    public List<BuildingType> getRequiredBuildings()
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public BuildingType getTyp()
+    public Stock getConstructionCost()
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public BuildingType getType()
     {
         return BuildingType.SCHOOL;
     }
 
     @Override
-    public List<UnitType> getAuszubildende()
+    public List<UnitType> getTrainees()
     {
         List<UnitType> auszubildende = new ArrayList<>();
-        switch (this.getStufe())
+        switch (this.getTier())
         {
             case 0:
                 auszubildende.add(UnitType.WORKER);
