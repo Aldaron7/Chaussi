@@ -1,4 +1,4 @@
-package chaussia.shared.einheiten;
+package chaussia.shared.units;
 
 public enum Einheitentyp
 {

@@ -1,4 +1,4 @@
-package chaussia.shared.einheiten;
+package chaussia.shared.units;
 
 public abstract class AbstractEinheit implements Einheit
 {
