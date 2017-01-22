@@ -2,7 +2,7 @@ package chaussia.shared.registry;
 
 import com.esotericsoftware.kryo.Kryo;
 
-import chaussia.shared.messages.NeuesSpielMsg;
+import chaussia.shared.messages.NewGameMsg;
 
 public class Registry
 {
@@ -16,7 +16,7 @@ public class Registry
 
     public void registerClasses()
     {
-        this.kryo.register(NeuesSpielMsg.class);
+        this.kryo.register(NewGameMsg.class);
     }
 
 }

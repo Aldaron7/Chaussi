@@ -2,11 +2,11 @@ package chaussia.shared.test;
 
 import java.io.IOException;
 
-import chaussia.shared.gebaeude.Gebaeude;
-import chaussia.shared.gebaeude.Gebaeudetyp;
-import chaussia.shared.gebaeude.produktion.Holzfaeller;
-import chaussia.shared.gebaeude.produktion.Produktionsgebaeude;
-import chaussia.shared.gebaeude.produktion.ProduktionsgebaeudeFactory;
+import chaussia.shared.building.Building;
+import chaussia.shared.building.BuildingType;
+import chaussia.shared.building.production.Lumberjack;
+import chaussia.shared.building.production.ProductionBuilding;
+import chaussia.shared.building.production.ProductionBuildingFactory;
 
 public class Test
 {
@@ -14,29 +14,29 @@ public class Test
     public static void main(String[] args) throws IOException
     {
         // Test.testGebaude();
-        Messages.put("holzfaeller", new Holzfaeller());
+        Messages.put("holzfaeller", new Lumberjack());
         System.out.println(Messages.getString("holzfaeller"));
     }
 
     public static void testGebaude()
     {
-        Gebaeude gebaeude = new ProduktionsgebaeudeFactory().create(Gebaeudetyp.HOLZFAELLER);
-        System.out.println(gebaeude.getClass().getSimpleName());
-        ((Produktionsgebaeude) gebaeude).setArbeitet(true);
-        ((Produktionsgebaeude) gebaeude).addArbeiter();
+        Building building = new ProductionBuildingFactory().create(BuildingType.LUMBERJACK);
+        System.out.println(building.getClass().getSimpleName());
+        ((ProductionBuilding) building).setArbeitet(true);
+        ((ProductionBuilding) building).addArbeiter();
 
         for (int i = 0; i < 5; i++)
         {
-            System.out.println("bauzeit:" + gebaeude.getBauzeit());
-            System.out.println(((Produktionsgebaeude) gebaeude).getErtrag());
-            gebaeude.reduziereBauzeit();
+            System.out.println("bauzeit:" + building.getBauzeit());
+            System.out.println(((ProductionBuilding) building).getErtrag());
+            building.reduziereBauzeit();
         }
-        gebaeude.upgrade();
+        building.upgrade();
         for (int i = 0; i < 5; i++)
         {
-            System.out.println("upgradedauer:" + gebaeude.getUpgradedauer());
-            System.out.println(((Produktionsgebaeude) gebaeude).getErtrag());
-            gebaeude.reduziereUpgradeDauer();
+            System.out.println("upgradedauer:" + building.getUpgradedauer());
+            System.out.println(((ProductionBuilding) building).getErtrag());
+            building.reduziereUpgradeDauer();
         }
     }
 
