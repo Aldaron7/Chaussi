@@ -3,9 +3,10 @@ package chaussia.shared.building;
 import java.io.Serializable;
 import java.util.List;
 
+import chaussia.shared.Locatable;
 import chaussia.shared.material.Stock;
 
-public interface Building extends Serializable
+public interface Building extends Serializable, Locatable
 {
     int getUpkeep();
 

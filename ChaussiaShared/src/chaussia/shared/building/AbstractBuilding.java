@@ -2,12 +2,58 @@ package chaussia.shared.building;
 
 import java.io.Serializable;
 
+import javafx.geometry.Point2D;
+
 public abstract class AbstractBuilding implements Serializable, Building
 {
 
+    @Override
+    public int getX()
+    {
+        return this.x;
+    }
+
+    @Override
+    public void setX(int x)
+    {
+        this.x = x;
+    }
+
+    @Override
+    public int getY()
+    {
+        return this.y;
+    }
+
+    @Override
+    public void setY(int y)
+    {
+        this.y = y;
+    }
+
+    @Override
+    public Point2D getCoordinates()
+    {
+        return new Point2D(this.getX(), this.getY());
+    }
+
+    @Override
+    public void setCoordinates(int x, int y)
+    {
+        this.setX(x);
+        this.setY(y);
+    }
+
+    @Override
+    public void setCoordinates(Point2D coordinates)
+    {
+        this.setX((int) coordinates.getX());
+        this.setY((int) coordinates.getY());
+    }
+
     private static final long serialVersionUID = 1L;
 
-    private int               upkeep, constructionperiod, upgradeperiod, tier = 0;
+    private int               upkeep, constructionperiod, upgradeperiod, tier, x, y = 0;
 
     public AbstractBuilding()
     {
