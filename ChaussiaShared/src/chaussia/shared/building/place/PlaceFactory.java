@@ -17,15 +17,15 @@ public class PlaceFactory
         {
             case VILLAGE:
                 place = new Village();
-                place.setTaxes(Const.TAXYIELD_VILLAGE);
+                place.setTaxes(Const.TAXES_VILLAGE);
                 break;
             case TOWN:
                 place = new Town();
-                place.setTaxes(2 * Const.TAXYIELD_VILLAGE);
+                place.setTaxes(2 * Const.TAXES_VILLAGE);
                 break;
             case CITY:
                 place = new City();
-                place.setTaxes(4 * Const.TAXYIELD_VILLAGE);
+                place.setTaxes(4 * Const.TAXES_VILLAGE);
                 break;
             default:
                 break;

@@ -23,7 +23,7 @@ public class Const
     public static final int OUTPUT_IRON                    = 10;
     public static final int OUTPUT_FABRIC                  = 10;
     // Ortschaft
-    public static final int TAXYIELD_VILLAGE               = 10;
+    public static final int TAXES_VILLAGE               = 10;
 
     public static final int CONSTRUCTIONPERIOD_VILLAGE     = 0;
 
