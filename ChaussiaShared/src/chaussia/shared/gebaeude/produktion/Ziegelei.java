@@ -2,7 +2,7 @@ package chaussia.shared.gebaeude.produktion;
 
 import java.util.List;
 
-import chaussia.shared.Konstanten;
+import chaussia.shared.Const;
 import chaussia.shared.einheiten.Einheitentyp;
 import chaussia.shared.gebaeude.Gebaeudetyp;
 import chaussia.shared.rohstoffe.RohstoffVorrat;
@@ -28,13 +28,13 @@ public class Ziegelei extends AbstractProduktionsgebaeude
     @Override
     public void resetUpgradedauer()
     {
-        this.setUpgradedauer(Konstanten.UPGRADEDAUER_PRODUKTION2);
+        this.setUpgradedauer(Const.UPGRADEDAUER_PRODUKTION2);
     }
 
     @Override
     public void resetBauzeit()
     {
-        this.setBauzeit(Konstanten.BAUZEIT_PRODUKTION2);
+        this.setBauzeit(Const.BAUZEIT_PRODUKTION2);
     }
 
     @Override

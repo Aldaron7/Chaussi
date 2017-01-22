@@ -1,6 +1,6 @@
 package chaussia.shared.gebaeude.ortschaft;
 
-import chaussia.shared.Konstanten;
+import chaussia.shared.Const;
 import chaussia.shared.gebaeude.Gebaeudetyp;
 
 public class OrtschaftFactory
@@ -17,15 +17,15 @@ public class OrtschaftFactory
         {
             case DORF:
                 ortschaft = new Dorf();
-                ortschaft.setSteuerertrag(Konstanten.STEUERERTRAG_DORF);
+                ortschaft.setSteuerertrag(Const.STEUERERTRAG_DORF);
                 break;
             case STADT:
                 ortschaft = new Stadt();
-                ortschaft.setSteuerertrag(2 * Konstanten.STEUERERTRAG_DORF);
+                ortschaft.setSteuerertrag(2 * Const.STEUERERTRAG_DORF);
                 break;
             case GROSSSTADT:
                 ortschaft = new Grossstadt();
-                ortschaft.setSteuerertrag(4 * Konstanten.STEUERERTRAG_DORF);
+                ortschaft.setSteuerertrag(4 * Const.STEUERERTRAG_DORF);
                 break;
             default:
                 break;

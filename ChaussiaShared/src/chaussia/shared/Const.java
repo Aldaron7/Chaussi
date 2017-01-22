@@ -1,6 +1,6 @@
 package chaussia.shared;
 
-public class Konstanten
+public class Const
 {
     // Produktion
     public static final int UPGRADEDAUER_PRODUKTION1     = 2;

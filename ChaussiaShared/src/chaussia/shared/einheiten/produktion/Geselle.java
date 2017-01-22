@@ -1,6 +1,6 @@
 package chaussia.shared.einheiten.produktion;
 
-import chaussia.shared.Konstanten;
+import chaussia.shared.Const;
 import chaussia.shared.einheiten.AbstractEinheit;
 import chaussia.shared.einheiten.Einheitentyp;
 import chaussia.shared.rohstoffe.RohstoffVorrat;
@@ -11,7 +11,7 @@ public class Geselle extends AbstractEinheit
     @Override
     public void resetAusbildungszeit()
     {
-        this.setAusbildungszeit(Konstanten.BAUZEIT_PRODUKTION2);
+        this.setAusbildungszeit(Const.BAUZEIT_PRODUKTION2);
     }
 
     @Override

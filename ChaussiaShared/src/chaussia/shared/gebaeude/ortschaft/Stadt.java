@@ -2,7 +2,7 @@ package chaussia.shared.gebaeude.ortschaft;
 
 import java.util.List;
 
-import chaussia.shared.Konstanten;
+import chaussia.shared.Const;
 import chaussia.shared.gebaeude.Gebaeude;
 import chaussia.shared.gebaeude.Gebaeudetyp;
 import chaussia.shared.rohstoffe.RohstoffVorrat;
@@ -27,7 +27,7 @@ public class Stadt extends AbstractOrtschaft
     @Override
     public void resetUpgradedauer()
     {
-        this.setUpgradedauer(Konstanten.UPGRADEDAUER_STADT);
+        this.setUpgradedauer(Const.UPGRADEDAUER_STADT);
     }
 
     @Override

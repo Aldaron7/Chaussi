@@ -2,7 +2,7 @@ package chaussia.shared.gebaeude.ausbildung;
 
 import java.util.List;
 
-import chaussia.shared.Konstanten;
+import chaussia.shared.Const;
 import chaussia.shared.einheiten.Einheitentyp;
 import chaussia.shared.gebaeude.AbstractGebaeude;
 import chaussia.shared.gebaeude.Gebaeude;
@@ -17,13 +17,13 @@ public class Universitaet extends AbstractGebaeude implements Ausbildungsgebaeud
     @Override
     public void resetUpgradedauer()
     {
-        this.setUpgradedauer(Konstanten.UPGRADEDAUER_UNI);
+        this.setUpgradedauer(Const.UPGRADEDAUER_UNI);
     }
 
     @Override
     public void resetBauzeit()
     {
-        this.setBauzeit(Konstanten.BAUZEIT_UNI);
+        this.setBauzeit(Const.BAUZEIT_UNI);
     }
 
     @Override

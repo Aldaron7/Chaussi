@@ -2,7 +2,7 @@ package chaussia.shared.gebaeude.ortschaft;
 
 import java.util.List;
 
-import chaussia.shared.Konstanten;
+import chaussia.shared.Const;
 import chaussia.shared.gebaeude.Gebaeude;
 import chaussia.shared.gebaeude.Gebaeudetyp;
 import chaussia.shared.rohstoffe.RohstoffVorrat;
@@ -31,7 +31,7 @@ public class Dorf extends AbstractOrtschaft
     @Override
     public void resetBauzeit()
     {
-        this.setBauzeit(Konstanten.BAUZEIT_DORF);
+        this.setBauzeit(Const.BAUZEIT_DORF);
     }
 
     @Override

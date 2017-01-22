@@ -1,6 +1,6 @@
 package chaussia.shared.einheiten.produktion;
 
-import chaussia.shared.Konstanten;
+import chaussia.shared.Const;
 import chaussia.shared.einheiten.AbstractEinheit;
 import chaussia.shared.einheiten.Einheit;
 import chaussia.shared.einheiten.Einheitentyp;
@@ -19,11 +19,11 @@ public class ArbeiterFactory
         {
             case EINFACHER_ARBEITER:
                 arbeiter = new EinfacherArbeiter();
-                arbeiter.setUnterhaltskosten(Konstanten.UNTERHALT_EINFACHER_ARBEITER);
+                arbeiter.setUnterhaltskosten(Const.UNTERHALT_EINFACHER_ARBEITER);
                 break;
             case GESELLE:
                 arbeiter = new Geselle();
-                arbeiter.setUnterhaltskosten(Konstanten.UNTERHALT_GESELLE);
+                arbeiter.setUnterhaltskosten(Const.UNTERHALT_GESELLE);
             default:
                 break;
         }
