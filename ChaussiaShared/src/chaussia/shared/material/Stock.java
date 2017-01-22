@@ -33,14 +33,15 @@ public class Stock implements Map<MaterialType, Integer>
         }
     }
 
-    public void putKosten(MaterialType material, Integer value)
+    @Override
+    public Integer put(MaterialType materialType, Integer amount)
     {
-        this.stock.put(material, value);
+        return this.stock.put(materialType, amount);
     }
 
     public void put(Material material)
     {
-        this.put(material.getTyp(), material.getMenge());
+        this.put(material.getType(), material.getAmount());
     }
 
     public boolean contains(Stock stock)
@@ -146,12 +147,6 @@ public class Stock implements Map<MaterialType, Integer>
     public Set<MaterialType> keySet()
     {
         return this.stock.keySet();
-    }
-
-    @Override
-    public Integer put(MaterialType key, Integer value)
-    {
-        return this.stock.put(key, value);
     }
 
     @Override

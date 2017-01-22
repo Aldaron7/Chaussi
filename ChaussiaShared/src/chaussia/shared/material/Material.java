@@ -2,42 +2,42 @@ package chaussia.shared.material;
 
 public class Material
 {
-    private MaterialType typ;
-    private int         menge;
+    private MaterialType type;
+    private int         amount;
 
-    public Material(MaterialType typ, int menge)
+    public Material(MaterialType type, int amount)
     {
-        this.typ = typ;
-        this.menge = menge;
+        this.type = type;
+        this.amount = amount;
         this.floor();
     }
 
-    public MaterialType getTyp()
+    public MaterialType getType()
     {
-        return this.typ;
+        return this.type;
     }
 
-    public void setTyp(MaterialType typ)
+    public void setType(MaterialType type)
     {
-        this.typ = typ;
+        this.type = type;
     }
 
-    public int getMenge()
+    public int getAmount()
     {
-        return this.menge;
+        return this.amount;
     }
 
-    public void setMenge(int menge)
+    public void setAmount(int amount)
     {
-        this.menge = menge;
+        this.amount = amount;
         this.floor();
     }
 
     private void floor()
     {
-        if (this.menge < 0)
+        if (this.amount < 0)
         {
-            this.menge = 0;
+            this.amount = 0;
         }
     }
 
