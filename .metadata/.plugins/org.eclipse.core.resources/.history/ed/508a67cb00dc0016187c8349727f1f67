@@ -1,0 +1,41 @@
+package chaussia.shared.gebaeude;
+
+import java.util.List;
+
+import chaussia.shared.gebaeude.AbstractGebaeude.Typ;
+
+public interface Gebaeude
+{
+    public enum Typ{
+        
+    }
+
+    int getUnterhaltskosten();
+
+    void setUnterhaltskosten(int unterhaltskosten);
+
+    void reduziereBauzeit();
+
+    void reduziereUpgradeDauer();
+
+    int getUpgradedauer();
+
+    void setUpgradedauer(int upgradedauer);
+
+    int getBauzeit();
+
+    void setBauzeit(int bauzeit);
+
+    int getStufe();
+
+    void setTyp(Typ typ);
+
+    Typ getTyp();
+
+    Gebaeude upgrade();
+
+    List<Typ> getBenoetigteGebaude();
+
+    RohstoffKosten getBaukosten();
+
+}

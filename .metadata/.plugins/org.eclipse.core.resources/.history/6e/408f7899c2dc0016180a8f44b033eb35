@@ -1,0 +1,96 @@
+package chaussia.shared.rohstoffe;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class RohstoffKosten
+{
+    private Map<Rohstofftyp, Integer> kosten = new HashMap<>();
+
+    public RohstoffKosten(Map<Rohstofftyp, Integer> kosten)
+    {
+        this();
+        this.kosten.putAll(kosten);
+    }
+
+    public RohstoffKosten(Rohstoff...){
+
+    }
+
+    public RohstoffKosten()
+    {
+        for (Rohstofftyp rohstoff : Rohstofftyp.values())
+        {
+            this.kosten.put(rohstoff, 0);
+        }
+    }
+
+    public void putKosten(Rohstofftyp rohstoff, Integer wert)
+    {
+        this.kosten.put(rohstoff, wert);
+    }
+
+    public void putKosten(Rohstoff rohstoff)
+    {
+        this.kosten.put(rohstoff.getTyp(), rohstoff.getMenge());
+    }
+
+    public Map<Rohstofftyp, Integer> getKosten()
+    {
+        return this.kosten;
+    }
+
+    public boolean contains(RohstoffKosten rohstoffKosten)
+    {
+        final Map<Rohstofftyp, Integer> kosten = rohstoffKosten.getKosten();
+        final boolean result = kosten.keySet().stream().filter(rohstoff -> kosten.get(rohstoff) > 0)
+                        .allMatch(rohstoff -> this.kosten.get(rohstoff) >= kosten.get(rohstoff));
+        return result;
+    }
+
+    public void mult(double skalar)
+    {
+        this.kosten.entrySet().forEach(entry -> entry.setValue((int) (entry.getValue() * skalar)));
+    }
+
+    @Override
+    public int hashCode()
+    {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((this.kosten == null) ? 0 : this.kosten.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (this == obj)
+        {
+            return true;
+        }
+        if (obj == null)
+        {
+            return false;
+        }
+        if (this.getClass() != obj.getClass())
+        {
+            return false;
+        }
+        RohstoffKosten other = (RohstoffKosten) obj;
+        if (this.kosten == null)
+        {
+            if (other.kosten != null)
+            {
+                return false;
+            }
+        }
+        else
+            if (!this.kosten.equals(other.kosten))
+            {
+                return false;
+            }
+        return true;
+    }
+
+}

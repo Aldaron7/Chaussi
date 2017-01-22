@@ -1,0 +1,7 @@
+package chaussia.shared.einheiten;
+
+public abstract class Arbeiter extends Einheit
+{
+    public final String EINFACHER_ARBEITER = "einfacherarbeiter";
+    public final String GESELLE = "geselle";
+}

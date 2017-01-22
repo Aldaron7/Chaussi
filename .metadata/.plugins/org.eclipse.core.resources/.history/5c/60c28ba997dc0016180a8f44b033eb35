@@ -1,0 +1,58 @@
+package chaussia.shared.gebaeude.produktion;
+
+import chaussia.shared.gebaeude.AbstractGebaeude;
+import chaussia.shared.gebaeude.Gebaeude;
+
+public abstract class AbstractProduktionsgebaeude extends AbstractGebaeude implements Produktionsgebaeude
+{
+    private static final long serialVersionUID = 1L;
+    private int               ertrag           = 10;
+    private boolean           arbeitet         = false;
+
+    public AbstractProduktionsgebaeude( int unterhaltskosten, int ertrag)
+    {
+        super(unterhaltskosten);
+        this.ertrag = ertrag;
+    }
+
+    @Override
+    public int getErtrag()
+    {
+        // lineare Entwicklung proportional zu stufe
+        if (this.getBauzeit() <= 0 && this.isArbeitet())
+        {
+            return this.ertrag * (this.getStufe() + 1);
+        }
+        return 0;
+    }
+
+    @Override
+    public boolean isArbeitet()
+    {
+        return this.arbeitet;
+    }
+
+    @Override
+    public void setArbeitet(boolean arbeitet)
+    {
+        this.arbeitet = arbeitet;
+    }
+
+    @Override
+    public int getUnterhaltskosten()
+    {
+        if (this.isArbeitet())
+        {
+            return super.getUnterhaltskosten();
+        }
+        return 0;
+    }
+
+    @Override
+    public Gebaeude upgrade()
+    {
+        this.setUpgradedauer(3);
+        return this;
+    }
+
+}

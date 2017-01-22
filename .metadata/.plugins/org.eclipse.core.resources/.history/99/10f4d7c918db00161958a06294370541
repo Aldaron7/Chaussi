@@ -1,0 +1,15 @@
+package chaussia.shared.test;
+
+import chaussia.shared.gebaeude.Gebaeude;
+import chaussia.shared.gebaeude.ProduktionsgebaeudeFactory;
+
+public class Test
+{
+
+    public static void main(String[] args)
+    {
+        Gebaeude gebaeude = new ProduktionsgebaeudeFactory().create("holzfaeller");
+        System.out.println(gebaeude.getClass());
+    }
+
+}

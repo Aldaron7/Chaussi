@@ -1,0 +1,8 @@
+package chaussia.shared.gebaeude.ausbildung;
+
+import chaussia.shared.gebaeude.Gebaeude;
+
+public interface Ausbildungsgebaeude extends Gebaeude
+{
+
+}

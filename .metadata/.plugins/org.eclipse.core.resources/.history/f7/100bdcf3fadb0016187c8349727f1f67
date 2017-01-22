@@ -1,0 +1,8 @@
+package chaussia.shared.einheiten.arbeiter;
+
+import chaussia.shared.einheiten.Einheit;
+
+public abstract class Arbeiter extends Einheit
+{
+    
+}

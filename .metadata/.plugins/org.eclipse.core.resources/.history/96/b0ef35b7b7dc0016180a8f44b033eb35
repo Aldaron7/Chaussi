@@ -1,0 +1,89 @@
+package chaussia.shared.gebaeude.produktion;
+
+import chaussia.shared.Konstanten;
+import chaussia.shared.gebaeude.Gebaeudetyp;
+
+public class ProduktionsgebaeudeFactory
+{
+
+    private final int bauzeit1   = 2;
+    private final int bauzeit2   = 3;
+    private final int unterhalt1 = 2;
+    private final int unterhalt2 = 4;
+    private final int ertrag1    = 10;
+
+    public ProduktionsgebaeudeFactory()
+    {
+    }
+
+    public AbstractProduktionsgebaeude create(Gebaeudetyp typ)
+    {
+        AbstractProduktionsgebaeude produktionsgebaeude = null;
+        switch (typ)
+        {
+            case HOLZFAELLER:
+                produktionsgebaeude = new Holzfaeller();
+                produktionsgebaeude.setErtrag(Konstanten.ERTRAG_HOLZ);
+                produktionsgebaeude.setUnterhaltskosten(Konstanten.UNTERHALT_PRODUKTION1);
+                produktionsgebaeude.resetBauzeit();
+                break;
+            case MINE:
+                produktionsgebaeude = new Mine();
+                produktionsgebaeude.setErtrag(Konstanten.ERTRAG_ERZ);
+                produktionsgebaeude.setUnterhaltskosten(Konstanten.UNTERHALT_PRODUKTION1);
+                produktionsgebaeude.reduziereBauzeit();
+                break;
+            case BAUERNHOF:
+                produktionsgebaeude = new Bauernhof();
+                produktionsgebaeude.setErtrag(Konstanten.ERTRAG_KORN);
+                produktionsgebaeude.setUnterhaltskosten(Konstanten.UNTERHALT_PRODUKTION1);
+                produktionsgebaeude.reduziereBauzeit();
+                break;
+            case LEHMGRUBE:
+                produktionsgebaeude = new Lehmgrube();
+                produktionsgebaeude.setErtrag(Konstanten.ERTRAG_LEHM);
+                produktionsgebaeude.setUnterhaltskosten(Konstanten.UNTERHALT_PRODUKTION1);
+                produktionsgebaeude.resetBauzeit();
+                break;
+            case SCHAEFER:
+                produktionsgebaeude = new Schaefer();
+                produktionsgebaeude.setErtrag(Konstanten.ERTRAG_WOLLE);
+                produktionsgebaeude.setUnterhaltskosten(Konstanten.UNTERHALT_PRODUKTION1);
+                produktionsgebaeude.setBauzeit(this.bauzeit1);
+                break;
+            case WEBSTUBE:
+                produktionsgebaeude = new Webstube();
+                produktionsgebaeude.setErtrag(Konstanten.ERTRAG_STOFF);
+                produktionsgebaeude.setUnterhaltskosten(Konstanten.UNTERHALT_PRODUKTION2);
+                produktionsgebaeude.resetBauzeit();
+                break;
+            case SAEGEWERK:
+                produktionsgebaeude = new Saegewerk();
+                produktionsgebaeude.setErtrag(Konstanten.ERTRAG_BRETT);
+                produktionsgebaeude.setUnterhaltskosten(Konstanten.UNTERHALT_PRODUKTION2);
+                produktionsgebaeude.resetBauzeit();
+                break;
+            case BAECKEREI:
+                produktionsgebaeude = new Baeckerei();
+                produktionsgebaeude.setErtrag(Konstanten.ERTRAG_BROT);
+                produktionsgebaeude.setUnterhaltskosten(Konstanten.UNTERHALT_PRODUKTION2);
+                produktionsgebaeude.resetBauzeit();
+                break;
+            case SCHMIEDE:
+                produktionsgebaeude = new Schmiede();
+                produktionsgebaeude.setErtrag(Konstanten.ERTRAG_EISEN);
+                produktionsgebaeude.setUnterhaltskosten(Konstanten.UNTERHALT_PRODUKTION2);
+                produktionsgebaeude.resetBauzeit();
+                break;
+            case ZIEGELEI:
+                produktionsgebaeude = new Ziegelei();
+                produktionsgebaeude.setErtrag(Konstanten.ERTRAG_ZIEGEL);
+                produktionsgebaeude.setUnterhaltskosten(Konstanten.UNTERHALT_PRODUKTION2);
+                produktionsgebaeude.resetBauzeit();
+                break;
+            default:
+                break;
+        }
+        return produktionsgebaeude;
+    }
+}

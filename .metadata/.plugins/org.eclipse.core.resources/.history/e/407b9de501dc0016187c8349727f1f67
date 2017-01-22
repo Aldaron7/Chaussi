@@ -1,0 +1,25 @@
+package chaussia.shared.gebaeude.produktion;
+
+import chaussia.shared.einheiten.Einheit;
+import chaussia.shared.rohstoffe.Rohstoff;
+
+public interface Produktionsgebaeude
+{
+
+    boolean isBesetzt();
+
+    void setBesetzt(boolean besetzt);
+
+    int getErtrag();
+
+    void setErtrag(int ertrag);
+
+    boolean isArbeitet();
+
+    void setArbeitet(boolean arbeitet);
+
+    Rohstoff getRohstoff();
+
+    Einheit.Typ getArbeiter();
+
+}

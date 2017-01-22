@@ -1,0 +1,10 @@
+package chaussia.shared;
+
+public class Konstanten
+{
+    private static final int UPGRADEDAUER_PRODUKTION1 = 2;
+    private static final int UPGRADEDAUER_PRODUKTION2 = 3;
+    private static final int BAUZEIT_PRODUKTION1      = 2;
+    private static final int BAUZEIT_PRODUKTION2      = 3;
+    private static final int ERTRAG_PRODUKTION1       = 10;
+}

@@ -1,0 +1,11 @@
+package chaussia.shared.einheiten.arbeiter;
+
+import chaussia.shared.einheiten.Einheit;
+
+public abstract class Arbeiter extends Einheit
+{
+    public enum Typ
+    {
+        EINFACHER_ARBEITER, GESELLE;
+    }
+}

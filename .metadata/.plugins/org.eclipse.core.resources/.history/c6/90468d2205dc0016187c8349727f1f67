@@ -1,0 +1,16 @@
+package chaussia.shared.gebaeude.ausbildung;
+
+import java.util.List;
+
+import chaussia.shared.einheiten.Einheit;
+import chaussia.shared.gebaeude.AbstractGebaeude;
+import chaussia.shared.gebaeude.Gebaeude;
+import chaussia.shared.gebaeude.RohstoffKosten;
+
+public class Schule extends AbstractGebaeude implements Ausbildungsgebaeude
+{
+
+    private static final long serialVersionUID = 1L;
+
+
+}

@@ -1,0 +1,50 @@
+package chaussia.shared.einheiten;
+
+import chaussia.shared.rohstoffe.RohstoffVorrat;
+
+public class AbstarctEinheit implements Einheit
+{
+
+    @Override
+    public int getAusbildungszeit()
+    {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    public void resetAusbildungszeit()
+    {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public int getUnterhaltskosten()
+    {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    public RohstoffVorrat getAusbildungskosten()
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public RohstoffVorrat getRohstoffUnterhalt()
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public Einheitentyp getTyp()
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+}

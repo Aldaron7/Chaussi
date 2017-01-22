@@ -1,0 +1,24 @@
+package chaussia.shared.einheiten.produktion;
+
+import chaussia.shared.einheiten.AbstractEinheit;
+import chaussia.shared.gebaeude.RohstoffKosten;
+
+public class Geselle extends AbstractEinheit implements Arbeiter
+{
+
+
+    @Override
+    public RohstoffKosten getAusbildungskosten()
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public RohstoffKosten getRohstoffUnterhalt()
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+}

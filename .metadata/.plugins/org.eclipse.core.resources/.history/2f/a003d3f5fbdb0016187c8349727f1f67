@@ -1,0 +1,30 @@
+package chaussia.shared.einheiten.arbeiter;
+
+import chaussia.shared.einheiten.Einheit.Typ;
+
+public class ArbeiterFactory
+{
+
+    public ArbeiterFactory()
+    {
+    }
+
+    public Arbeiter create(Typ typ)
+    {
+        Arbeiter arbeiter = null;
+        switch (typ)
+        {
+            case EINFACHER_ARBEITER:
+                arbeiter = new EinfacherArbeiter();
+                break;
+            case GESELLE:
+                arbeiter = new Geselle();
+            default:
+                break;
+        }
+        if(arbeiter != null){
+            arbeiter.setTyp(typ);
+        }
+        return arbeiter;
+    }
+}

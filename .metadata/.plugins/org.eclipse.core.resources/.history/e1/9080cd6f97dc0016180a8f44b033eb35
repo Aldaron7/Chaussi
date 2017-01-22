@@ -1,0 +1,33 @@
+package chaussia.shared.gebaeude;
+
+import java.util.List;
+
+public interface Gebaeude
+{
+    int getUnterhaltskosten();
+
+    void reduziereBauzeit();
+
+    void reduziereUpgradeDauer();
+
+    int getUpgradedauer();
+
+    void resetUpgradedauer();
+
+    int getBauzeit();
+
+    void resetBauzeit();
+
+    int getStufe();
+
+    void setStufe(int stufe);
+
+    Gebaeude upgrade();
+
+    List<Gebaeudetyp> getBenoetigteGebaeude();
+
+    RohstoffKosten getBaukosten();
+
+    Gebaeudetyp getTyp();
+
+}

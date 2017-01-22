@@ -1,0 +1,98 @@
+package chaussia.shared.gebaeude;
+
+import java.io.Serializable;
+import java.util.List;
+
+public abstract class Gebaeude implements Serializable
+{
+
+    private static final long serialVersionUID = 1L;
+
+    private int               unterhaltskosten, bauzeit, upgradedauer, stufe = 0;
+    private Typ               typ;
+
+    public Gebaeude()
+    {
+    }
+
+    public enum Typ
+    {
+        // Ortschaft
+        DORF, STADT, GROSSSTADT,
+        // Produktion
+        HOLZFAELLER, LEHMGRUBE, SCHAEFER, BAUERNHOF, MINE, SAEGEWERK, ZIEGELEI, WEBSTUBE, BAECKEREI, SCHMIEDE;
+    }
+
+    public int getUnterhaltskosten()
+    {
+        // unterhalt * (2 ^ stufe) = unterhalt * (1,2,4,8,16,...) [exponentielles Wachstum]
+        return (int) (this.unterhaltskosten * Math.pow(2, this.getStufe()));
+    }
+
+    public void setUnterhaltskosten(int unterhaltskosten)
+    {
+        this.unterhaltskosten = unterhaltskosten;
+    }
+
+    public void reduziereBauzeit()
+    {
+        if (this.bauzeit > 0)
+        {
+            this.bauzeit--;
+        }
+    }
+
+    public void reduziereUpgradeDauer()
+    {
+        if (this.upgradedauer > 0)
+        {
+            if (this.upgradedauer <= 1)
+            {
+                this.stufe++;
+            }
+            this.upgradedauer--;
+        }
+    }
+
+    public int getUpgradedauer()
+    {
+        return this.upgradedauer;
+    }
+
+    public void setUpgradedauer(int upgradedauer)
+    {
+        this.upgradedauer = upgradedauer;
+    }
+
+    public int getBauzeit()
+    {
+        return this.bauzeit;
+    }
+
+    public void setBauzeit(int bauzeit)
+    {
+        this.bauzeit = bauzeit;
+    }
+
+    public int getStufe()
+    {
+        return this.stufe;
+    }
+
+    public void setTyp(Typ typ)
+    {
+        this.typ = typ;
+    }
+
+    public Typ getTyp()
+    {
+        return this.typ;
+    }
+
+    public abstract Gebaeude upgrade();
+
+    public abstract List<Gebaeude> getBenoetigteGebaude();
+
+    public abstract RohstoffKosten getBaukosten();
+
+}

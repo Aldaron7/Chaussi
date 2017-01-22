@@ -1,0 +1,38 @@
+package chaussia.shared.gebaeude.ortschaft;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import chaussia.shared.gebaeude.Gebaeude;
+import chaussia.shared.gebaeude.RohstoffKosten;
+
+public class Dorf extends AbstractOrtschaft
+{
+    private static final long serialVersionUID = 1L;
+
+    public Dorf()
+    {
+    }
+
+    @Override
+    public Gebaeude upgrade()
+    {
+        final AbstractOrtschaft stadt = new OrtschaftFactory().create(Gebaeudetyp.STADT);
+        stadt.setUpgradedauer(3);
+        return stadt;
+    }
+
+    @Override
+    public List<Gebaeudetyp> getBenoetigteGebaeude()
+    {
+        return new ArrayList<>();
+    }
+
+    @Override
+    public RohstoffKosten getBaukosten()
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+}

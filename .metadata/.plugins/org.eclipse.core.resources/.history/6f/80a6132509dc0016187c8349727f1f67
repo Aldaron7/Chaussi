@@ -1,0 +1,58 @@
+package chaussia.shared.einheiten;
+
+import chaussia.shared.gebaeude.RohstoffKosten;
+
+public abstract class AbstractEinheit implements Einheit
+{
+    private int          ausbildungszeit, unterhaltskosten = 0;
+   
+    
+
+    private Einheitentyp typ;
+
+    public AbstractEinheit()
+    {
+    }
+
+    @Override
+    public int getAusbildungszeit()
+    {
+        return this.ausbildungszeit;
+    }
+
+    @Override
+    public void setAusbildungszeit(int ausbildungszeit)
+    {
+        this.ausbildungszeit = ausbildungszeit;
+    }
+
+    @Override
+    public int getUnterhaltskosten()
+    {
+        return this.unterhaltskosten;
+    }
+
+    @Override
+    public void setUnterhaltskosten(int unterhaltskosten)
+    {
+        this.unterhaltskosten = unterhaltskosten;
+    }
+
+    @Override
+    public void setTyp(Einheitentyp typ)
+    {
+        this.typ = typ;
+    }
+
+    @Override
+    public Einheitentyp getTyp()
+    {
+        return this.typ;
+    }
+    @Override
+    public abstract RohstoffKosten getRohstoffUnterhalt();
+
+    @Override
+    public abstract RohstoffKosten getAusbildungskosten();
+
+}

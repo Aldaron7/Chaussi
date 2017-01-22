@@ -1,0 +1,16 @@
+package chaussia.shared.einheiten;
+
+public abstract class AbstractEinheit implements Einheit
+{
+    private int ausbildungszeit, unterhaltskosten;
+
+    public AbstractEinheit()
+    {
+    }
+
+    @Override
+    public int getAusbildungszeit()
+    {
+        return this.ausbildungszeit;
+    }
+}

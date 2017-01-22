@@ -1,0 +1,34 @@
+package chaussia.shared.gebaeude.ortschaft;
+
+import java.util.List;
+
+import chaussia.shared.gebaeude.Gebaeude;
+import chaussia.shared.gebaeude.RohstoffKosten;
+
+public class Grossstadt extends Ortschaft
+{
+    public Grossstadt()
+    {
+    }
+
+    @Override
+    public Gebaeude upgrade()
+    {
+        return null;
+    }
+
+    @Override
+    public List<Gebaeude> getBenoetigteGebaude()
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public RohstoffKosten getBaukosten()
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+}

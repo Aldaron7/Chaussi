@@ -1,0 +1,112 @@
+package chaussia.shared.gebaeude;
+
+import java.io.Serializable;
+import java.util.List;
+
+public abstract class AbstractGebaeude implements Serializable, Gebaeude
+{
+
+    private static final long serialVersionUID = 1L;
+
+    private int               unterhaltskosten, bauzeit, upgradedauer, stufe = 0;
+    private Typ               typ;
+
+    public AbstractGebaeude()
+    {
+    }
+
+    public enum Typ
+    {
+        // Ortschaft
+        DORF, STADT, GROSSSTADT,
+        // Produktion
+        HOLZFAELLER, LEHMGRUBE, SCHAEFER, BAUERNHOF, MINE, SAEGEWERK, ZIEGELEI, WEBSTUBE, BAECKEREI, SCHMIEDE;
+    }
+
+    @Override
+    public int getUnterhaltskosten()
+    {
+        // unterhalt * (2 ^ stufe) = unterhalt * (1,2,4,8,16,...) [exponentielles Wachstum]
+        return (int) (this.unterhaltskosten * Math.pow(2, this.getStufe()));
+    }
+
+    @Override
+    public void setUnterhaltskosten(int unterhaltskosten)
+    {
+        this.unterhaltskosten = unterhaltskosten;
+    }
+
+    @Override
+    public void reduziereBauzeit()
+    {
+        if (this.bauzeit > 0)
+        {
+            this.bauzeit--;
+        }
+    }
+
+    @Override
+    public void reduziereUpgradeDauer()
+    {
+        if (this.upgradedauer > 0)
+        {
+            if (this.upgradedauer <= 1)
+            {
+                this.stufe++;
+            }
+            this.upgradedauer--;
+        }
+    }
+
+    @Override
+    public int getUpgradedauer()
+    {
+        return this.upgradedauer;
+    }
+
+    @Override
+    public void setUpgradedauer(int upgradedauer)
+    {
+        this.upgradedauer = upgradedauer;
+    }
+
+    @Override
+    public int getBauzeit()
+    {
+        return this.bauzeit;
+    }
+
+    @Override
+    public void setBauzeit(int bauzeit)
+    {
+        this.bauzeit = bauzeit;
+    }
+
+    @Override
+    public int getStufe()
+    {
+        return this.stufe;
+    }
+
+    @Override
+    public void setTyp(Typ typ)
+    {
+        this.typ = typ;
+    }
+
+    @Override
+    public Typ getTyp()
+    {
+        return this.typ;
+    }
+
+    @Override
+    public abstract Gebaeude upgrade();
+
+    @Override
+    public abstract List<Typ> getBenoetigteGebaude();
+
+    @Override
+    public abstract RohstoffKosten getBaukosten();
+
+}

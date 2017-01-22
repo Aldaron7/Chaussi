@@ -1,0 +1,8 @@
+package chaussia.shared.einheiten.produktion;
+
+import chaussia.shared.einheiten.AbstractEinheit;
+
+public abstract class AbstractArbeiter extends AbstractEinheit implements Arbeiter
+{
+
+}

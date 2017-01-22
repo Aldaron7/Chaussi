@@ -1,0 +1,10 @@
+package chaussia.shared.gebaeude.ausbildung;
+
+import chaussia.shared.gebaeude.AbstractGebaeude;
+
+public abstract class bstractAusbildungsgebaeude extends AbstractGebaeude
+{
+
+    private static final long serialVersionUID = 1L;
+
+}

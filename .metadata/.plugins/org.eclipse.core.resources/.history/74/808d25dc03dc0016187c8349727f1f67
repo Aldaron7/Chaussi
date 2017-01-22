@@ -1,0 +1,13 @@
+package chaussia.shared.gebaeude.ortschaft;
+
+import chaussia.shared.gebaeude.Gebaeude;
+import chaussia.shared.gebaeude.ausbildung.Ausbildungsgebaeude;
+
+public interface Ortschaft extends Gebaeude
+{
+
+    int getSteuerertrag();
+
+    void setSteuerertrag(int steuerertrag);
+
+}

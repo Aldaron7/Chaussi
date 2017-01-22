@@ -1,0 +1,42 @@
+1484574922363	Change method 'getArbeiter'
+1484574985430	Change method 'getArbeiter'
+1484575490017	Extract local variable 'kosten'
+1484575542220	Rename local variable 'e'
+1484575669391	Extract local variable 'result'
+1484578711875	Change method 'getBenoetigteGebaude'
+1484578859952	Rename package 'chaussia.shared.einheiten.arbeiter'
+1484580064295	Rename type 'Produktionsgebaeude'
+1484580092699	Extract interface 'Produktionsgebaeude'
+1484580206827	Rename type 'Ortschaft'
+1484580229660	Extract interface 'Ortschaft'
+1484580313516	Rename type 'Gebaeude'
+1484580341502	Extract interface 'Gebaeude'
+1484580395915	Rename type 'Einheit'
+1484580446015	Rename type 'Arbeiter'
+1484580538414	Rename type 'Ausbildungsgebaeude'
+1484580736550	Extract interface 'Einheit'
+1484580991874	Change method 'getBenoetigteGebaude'
+1484581311384	Extract interface 'Arbeiter'
+1484581684535	Delete element
+1484582307701	Delete element
+1484582935563	Rename type 'Typ'
+1484582950144	Rename type 'Typ'
+1484584496311	Delete element
+1484643317484	Rename method 'getBenoetigteGebaude'
+1484643694624	Move type 'Gebaeudetyp' to new file
+1484643720510	Move type 'Einheitentyp' to new file
+1484644490749	Rename local variable 'value'
+1484644501348	Rename local variable 'scalar'
+1484645451859	Rename local variable 'Unterhaltskosten'
+1484647371721	Delete element
+1484651020091	Extract local variable 'os'
+1484651030722	Extract local variable 'properties'
+1484652093421	Extract local variable 'path'
+1484652373042	Extract local variable 'file'
+1484661327577	Rename type 'Rohstoff'
+1484663771835	Move compilation unit
+1484663788464	Rename method 'setKosten'
+1484664988787	Rename local variable 'kosten'
+1484665259053	Rename type 'RohstoffKosten'
+1484666907542	Delete element
+1484667247573	Rename type 'AbstarctEinheit'

@@ -1,0 +1,18 @@
+package chaussia.shared.einheiten;
+
+import chaussia.shared.rohstoffe.RohstoffKosten;
+
+public interface Einheit
+{
+    int getAusbildungszeit();
+
+    void resetAusbildungszeit();
+
+    int getUnterhaltskosten();
+
+    RohstoffKosten getAusbildungskosten();
+
+    RohstoffKosten getRohstoffUnterhalt();
+
+    Einheitentyp getTyp();
+}

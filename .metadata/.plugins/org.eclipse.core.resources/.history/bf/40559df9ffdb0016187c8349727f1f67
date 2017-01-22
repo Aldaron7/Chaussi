@@ -1,0 +1,30 @@
+package chaussia.shared.gebaeude.ortschaft;
+
+import chaussia.shared.gebaeude.Gebaeude;
+
+public abstract class AbstractOrtschaft extends Gebaeude implements Ortschaft
+{
+    private static final long serialVersionUID = 1L;
+    private int               steuerertrag;
+
+    public AbstractOrtschaft()
+    {
+    }
+
+    @Override
+    public int getSteuerertrag()
+    {
+        if (this.getUpgradedauer() > 0)
+        {
+            return this.steuerertrag / 2;
+        }
+        return this.steuerertrag;
+    }
+
+    @Override
+    public void setSteuerertrag(int steuerertrag)
+    {
+        this.steuerertrag = steuerertrag;
+    }
+
+}

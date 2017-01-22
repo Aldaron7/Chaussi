@@ -1,0 +1,29 @@
+package chaussia.shared.einheiten.produktion;
+
+import chaussia.shared.gebaeude.RohstoffKosten;
+
+public class EinfacherArbeiter extends AbstractArbeiter
+{
+
+    @Override
+    public int getUnterhaltskosten()
+    {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    public RohstoffKosten getAusbildungskosten()
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public RohstoffKosten getRohstoffUnterhalt()
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+}

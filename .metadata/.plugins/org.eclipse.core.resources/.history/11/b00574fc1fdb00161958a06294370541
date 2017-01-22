@@ -1,0 +1,36 @@
+package chaussia.shared.gebaeude.ortschaft;
+
+public class OrtschaftFactory
+{
+    private final int steuerertrag = 10;
+
+    public OrtschaftFactory()
+    {
+    }
+
+    public Ortschaft create(String typ)
+    {
+        Ortschaft ortschaft = null;
+        switch (typ.toLowerCase())
+        {
+            case "dorf":
+                ortschaft = new Dorf();
+                ortschaft.setBauzeit(0);
+                ortschaft.setSteuerertrag(this.steuerertrag);
+                break;
+            case "stadt":
+                ortschaft = new Stadt();
+                ortschaft.setBauzeit(2);
+                ortschaft.setSteuerertrag(2 * this.steuerertrag);
+                break;
+            case "grossstadt":
+                ortschaft = new Grossstadt();
+                ortschaft.setBauzeit(6);
+                ortschaft.setSteuerertrag(4 * this.steuerertrag);
+                break;
+            default:
+                break;
+        }
+        return ortschaft;
+    }
+}

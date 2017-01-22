@@ -1,0 +1,38 @@
+package chaussia.shared.gebaeude;
+
+import java.util.List;
+
+import chaussia.shared.einheiten.EinfacherArbeiter;
+import chaussia.shared.einheiten.Einheit;
+import chaussia.shared.rohstoffe.Rohstoff;
+
+public class Bauernhof extends Produktionsgebaeude
+{
+
+    @Override
+    public Rohstoff getRohstoff()
+    {
+        return Rohstoff.KORN;
+    }
+
+    @Override
+    public String getArbeiter()
+    {
+        return "einfacherarbeiter";
+    }
+
+    @Override
+    public List<Gebaeude> getBenoetigteGebaude()
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public RohstoffKosten getBaukosten()
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+}

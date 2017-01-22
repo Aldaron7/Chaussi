@@ -1,0 +1,116 @@
+package chaussia.shared.gebaeude.ausbildung;
+
+import java.util.List;
+
+import chaussia.shared.gebaeude.Gebaeude;
+import chaussia.shared.gebaeude.RohstoffKosten;
+
+public class Schule implements Ausbildungsgebaeude
+{
+
+    @Override
+    public int getUnterhaltskosten()
+    {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    public void setUnterhaltskosten(int unterhaltskosten)
+    {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void reduziereBauzeit()
+    {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void reduziereUpgradeDauer()
+    {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public int getUpgradedauer()
+    {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    public void setUpgradedauer(int upgradedauer)
+    {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public int getBauzeit()
+    {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    public void setBauzeit(int bauzeit)
+    {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public int getStufe()
+    {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    public void setTyp(Typ typ)
+    {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public Typ getTyp()
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public Gebaeude upgrade()
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public List<Typ> getBenoetigteGebaude()
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public RohstoffKosten getBaukosten()
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public List<chaussia.shared.einheiten.Einheit.Typ> getAuszubildende()
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+}

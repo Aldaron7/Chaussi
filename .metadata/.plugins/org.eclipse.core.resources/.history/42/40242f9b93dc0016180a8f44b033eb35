@@ -1,0 +1,39 @@
+package chaussia.shared.einheiten.produktion;
+
+import chaussia.shared.einheiten.Einheit;
+
+public class ArbeiterFactory
+{
+    private final int ausbildungszeit1 = 1;
+    private final int ausbildungszeit2 = 3;
+    private final int unterhalt1       = 1;
+    private final int unterhalt2       = 2;
+
+    public ArbeiterFactory()
+    {
+    }
+
+    public Arbeiter create(Einheit.Einheitentyp typ)
+    {
+        Arbeiter arbeiter = null;
+        switch (typ)
+        {
+            case EINFACHER_ARBEITER:
+                arbeiter = new EinfacherArbeiter();
+                arbeiter.setAusbildungszeit(this.ausbildungszeit1);
+                arbeiter.setUnterhaltskosten(this.unterhalt1);
+                break;
+            case GESELLE:
+                arbeiter = new Geselle();
+                arbeiter.setAusbildungszeit(this.ausbildungszeit2);
+                arbeiter.setUnterhaltskosten(this.unterhalt2);
+            default:
+                break;
+        }
+        if (arbeiter != null)
+        {
+            arbeiter.setTyp(typ);
+        }
+        return arbeiter;
+    }
+}

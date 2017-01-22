@@ -1,0 +1,10 @@
+package chaussia.shared.gebaeude.ortschaft;
+
+public interface Ortschaft
+{
+
+    int getSteuerertrag();
+
+    void setSteuerertrag(int steuerertrag);
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract method &apos;public void start()&apos; from &apos;chaussia.client.ChaussiaClient.ChaussiaClient()&apos; to &apos;chaussia.client.ChaussiaClient&apos;&#x0D;&#x0A;- Original project: &apos;ChaussiaClient&apos;&#x0D;&#x0A;- Method name: &apos;start&apos;&#x0D;&#x0A;- Destination type: &apos;chaussia.client.ChaussiaClient&apos;&#x0D;&#x0A;- Declared visibility: &apos;public&apos;" comments="false" description="Extract method &apos;start&apos;" destination="0" exceptions="false" flags="786434" id="org.eclipse.jdt.ui.extract.method" input="/src&lt;chaussia.client{ChaussiaClient.java" name="start" replace="false" selection="368 358" stamp="1483727076436" version="1.0" visibility="1"/>
+</session>

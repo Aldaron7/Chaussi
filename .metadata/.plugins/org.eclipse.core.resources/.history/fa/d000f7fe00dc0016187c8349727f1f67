@@ -1,0 +1,29 @@
+package chaussia.shared.einheiten;
+
+import chaussia.shared.einheiten.AbstractEinheit.Typ;
+import chaussia.shared.gebaeude.RohstoffKosten;
+
+public interface Einheit
+{
+
+    int getAusbildungszeit();
+
+    void setAusbildungszeit(int ausbildungszeit);
+
+    int getBewegungspunkte();
+
+    void setBewegungspunkte(int bewegungspunkte);
+
+    int getUnterhaltskosten();
+
+    void setUnterhaltskosten(int unterhaltskosten);
+
+    void setTyp(Typ typ);
+
+    Typ getTyp();
+
+    RohstoffKosten getAusbildungskosten();
+
+    int getMaxBewegungspunkte();
+
+}

@@ -1,0 +1,66 @@
+package chaussia.shared.einheiten;
+
+import chaussia.shared.gebaeude.RohstoffKosten;
+
+public abstract class AbstractEinheit
+{
+    private int ausbildungszeit, bewegungspunkte, unterhaltskosten = 0;
+    private Typ typ;
+
+    public AbstractEinheit()
+    {
+    }
+
+    public enum Typ
+    {
+        // Arbeiter
+        EINFACHER_ARBEITER, GESELLE,
+        // Militaer
+        MILIZ, SOLDAT, RITTER;
+    }
+
+    public int getAusbildungszeit()
+    {
+        return this.ausbildungszeit;
+    }
+
+    public void setAusbildungszeit(int ausbildungszeit)
+    {
+        this.ausbildungszeit = ausbildungszeit;
+    }
+
+    public int getBewegungspunkte()
+    {
+        return this.bewegungspunkte;
+    }
+
+    public void setBewegungspunkte(int bewegungspunkte)
+    {
+        this.bewegungspunkte = bewegungspunkte;
+    }
+
+    public int getUnterhaltskosten()
+    {
+        return this.unterhaltskosten;
+    }
+
+    public void setUnterhaltskosten(int unterhaltskosten)
+    {
+        this.unterhaltskosten = unterhaltskosten;
+    }
+
+    public void setTyp(Typ typ)
+    {
+        this.typ = typ;
+    }
+
+    public Typ getTyp()
+    {
+        return this.typ;
+    }
+
+    public abstract RohstoffKosten getAusbildungskosten();
+
+    public abstract int getMaxBewegungspunkte();
+
+}

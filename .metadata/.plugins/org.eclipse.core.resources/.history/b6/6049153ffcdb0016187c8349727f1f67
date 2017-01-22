@@ -1,0 +1,41 @@
+package chaussia.shared.gebaeude.produktion;
+
+import java.util.List;
+
+import chaussia.shared.einheiten.arbeiter.Arbeiter;
+import chaussia.shared.gebaeude.Gebaeude;
+import chaussia.shared.gebaeude.RohstoffKosten;
+import chaussia.shared.rohstoffe.Rohstoff;
+
+public class Lehmgrube extends Produktionsgebaeude
+{
+
+    private static final long serialVersionUID = 1L;
+
+    @Override
+    public Rohstoff getRohstoff()
+    {
+        return Rohstoff.LEHM;
+    }
+
+    @Override
+    public Arbeiter.Typ getArbeiter()
+    {
+        return Arbeiter.Typ.EINFACHER_ARBEITER;
+    }
+
+    @Override
+    public List<Gebaeude> getBenoetigteGebaude()
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public RohstoffKosten getBaukosten()
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+}

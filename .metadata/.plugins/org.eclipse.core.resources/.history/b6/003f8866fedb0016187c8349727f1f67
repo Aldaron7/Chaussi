@@ -1,0 +1,17 @@
+package chaussia.shared.gebaeude.ausbildung;
+
+import chaussia.shared.gebaeude.Gebaeude;
+
+public abstract class Ausbildungsgebaeude extends Gebaeude
+{
+
+    private static final long serialVersionUID = 1L;
+
+    @Override
+    public Gebaeude upgrade()
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+}

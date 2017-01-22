@@ -1,0 +1,41 @@
+package chaussia.shared.gebaeude.produktion;
+
+import java.util.List;
+
+import chaussia.shared.einheiten.arbeiter.ArbeiterFactory;
+import chaussia.shared.gebaeude.Gebaeude;
+import chaussia.shared.gebaeude.RohstoffKosten;
+import chaussia.shared.rohstoffe.Rohstoff;
+
+public class Saegewerk extends Produktionsgebaeude
+{
+
+    private static final long serialVersionUID = 1L;
+
+    @Override
+    public Rohstoff getRohstoff()
+    {
+        return Rohstoff.BRETT;
+    }
+
+    @Override
+    public Typ getArbeiter()
+    {
+        return ArbeiterFactory.EINFACHER_ARBEITER;
+    }
+
+    @Override
+    public List<Gebaeude> getBenoetigteGebaude()
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public RohstoffKosten getBaukosten()
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+}

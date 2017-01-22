@@ -1,0 +1,22 @@
+package chaussia.shared;
+
+public class Konstanten
+{
+    public static final int UPGRADEDAUER_PRODUKTION1 = 2;
+    public static final int UPGRADEDAUER_PRODUKTION2 = 3;
+
+    public static final int BAUZEIT_PRODUKTION1      = 2;
+    public static final int BAUZEIT_PRODUKTION2      = 3;
+    public static final int UNTERHALT_PRODUKTION1    = 2;
+    public static final int UNTERHALT_PRODUKTION2    = 3;
+    public static final int ERTRAG_HOLZ              = 10;
+    public static final int ERTRAG_LEHM              = 10;
+    public static final int ERTRAG_KORN              = 10;
+    public static final int ERTRAG_ERZ               = 10;
+    public static final int ERTRAG_WOLLE             = 10;
+    public static final int ERTRAG_BRETT             = 10;
+    public static final int ERTRAG_ZIEGEL            = 10;
+    public static final int ERTRAG_BROT              = 10;
+    public static final int ERTRAG_EISEN             = 10;
+    public static final int ERTRAG_STOFF             = 10;
+}

@@ -1,0 +1,17 @@
+package chaussia.shared.test;
+
+public class ExternalizeStrings
+{
+    private String hallo = ExternalizeStrings.getString("ExternalizeStrings.hallo"); //$NON-NLS-1$
+
+    public String getHallo()
+    {
+        return this.hallo;
+    }
+
+    public void setHallo(String hallo)
+    {
+        this.hallo = hallo;
+    }
+
+}

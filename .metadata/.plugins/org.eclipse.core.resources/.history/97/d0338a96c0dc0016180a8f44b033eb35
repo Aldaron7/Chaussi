@@ -1,0 +1,46 @@
+package chaussia.shared.rohstoffe;
+
+public class Rohstoff
+{
+    private Rohstofftyp typ;
+    private int         menge;
+
+    public Rohstoff(Rohstofftyp typ, int menge)
+    {
+        this.typ = typ;
+        this.menge = menge;
+    }
+
+    @Override
+    public int hashCode()
+    {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((this.typ == null) ? 0 : this.typ.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (this == obj)
+        {
+            return true;
+        }
+        if (obj == null)
+        {
+            return false;
+        }
+        if (this.getClass() != obj.getClass())
+        {
+            return false;
+        }
+        Rohstoff other = (Rohstoff) obj;
+        if (this.typ != other.typ)
+        {
+            return false;
+        }
+        return true;
+    }
+
+}
